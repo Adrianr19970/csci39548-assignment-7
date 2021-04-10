@@ -1,10 +1,16 @@
+html {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ---Home Page CSS--- */
 .App {
   text-align: center;
+  font-family: 'Segoe UI';
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 35vmin;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -14,18 +20,18 @@
 }
 
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 2em;
+  color: #fff;
 }
 
-.App-link {
-  color: #61dafb;
+.App h1 {
+  border: 1px solid #fff;
+  padding: 30px 30px 30px 30px;
 }
 
 @keyframes App-logo-spin {
@@ -36,3 +42,142 @@
     transform: rotate(360deg);
   }
 }
+
+/*--------------------------*/
+
+/* ---Login Page CSS--- */
+#login {
+  font-family: 'Segoe UI';
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}
+
+#login form {
+  padding: 30px 30px 30px 30px;
+  border: 1px solid #fff;
+}
+
+#login button {
+  margin-top: 30px;
+}
+/*-----------------------------*/
+
+/* ---User Profile CSS--- */
+#user {
+  font-family: 'Segoe UI';
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}
+
+#info {
+  padding: 30px 30px 30px 30px;
+  border: 1px solid #fff;
+}
+
+#loginDirectory {
+  text-align: center;
+  margin-top: 50px;
+  padding: 0px 70px 30px 70px;
+  border: 1px solid #fff;
+}
+
+/* ------------------ */
+
+/* ---Credit CSS--- */
+#credit {
+  font-family: 'Segoe UI';
+  min-height: 100vh;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 1.5em;
+}
+
+#credit h1 {
+  padding: 0px 0px 0px 70px;
+}
+
+#balanceInfo {
+  margin-top: 50px;
+  padding: 30px 30px 30px 70px;
+  border: 1px solid #fff;
+}
+
+#addCredit {
+  text-align: left;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 10px 0px 30px 70px;
+  border: 1px solid #fff;
+}
+
+#addCredit input {
+  padding: 10px 0px 10px 0px;
+  margin-left: 10px;
+}
+
+#addCredit button {
+  margin-top: 25px;
+}
+
+#creditItems, ul.no-bullets{
+  list-style-type: none;
+}
+
+#creditItems {
+  padding: 0px 10px 0px 70px;
+  border: 1px solid #fff;
+}
+
+#creditItems h3 {
+  padding: 10px 20px 10px 20px;
+  display: inline-flex;
+  border: 1px solid #fff;
+  border-radius: 30px;
+}
+
+#directory {
+  margin-top: 50px;
+  padding: 30px 70px 30px 70px;
+  border: 1px solid #fff;
+}
+
+#directory label {
+  margin-right: 10px;
+}
+/* ------------------ */
+
+/* ---Buttons CSS--- */
+#buttons button {
+  padding-left: 2px;
+  padding-right: 2px;
+  background: #000;
+  border: 1px solid #fff;
+}
+
+#buttons button p {
+  color: #fff;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: .75vw;
+}
+
+#buttons button:hover {
+  background: #fff;
+  text-decoration: none;
+  transition: color 0.2s;
+  border: 1px solid #000;
+}
+
+#buttons button:hover p {
+  color: #000;
+}
+
+/* ------------------ */
