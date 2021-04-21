@@ -102,7 +102,7 @@ class App extends Component {
   }
 
   render() {
-    let HomeComponent = () => (<Home accountBalance={this.state.accountBalance.toFixed(2)}/>);
+    let HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
     
     let UserProfileComponent = () => (
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} />
