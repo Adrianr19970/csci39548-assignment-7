@@ -8,6 +8,7 @@ import Home from './components/Home';
 import UserProfile from './components/UserProfile';
 import Login from './components/Login';
 import Credit from './components/Credit';
+import Debit from './components/Debit';
 
 class App extends Component {
   constructor() {
@@ -20,6 +21,7 @@ class App extends Component {
         memberSince: '07/23/96',
       },
       credit: [],
+      debit: [],
       totalCredit: 0
     }
   }
@@ -54,6 +56,7 @@ class App extends Component {
     }, 0);
   }
 
+
   addCredit = (event) => {
     event.preventDefault();
 
@@ -69,7 +72,26 @@ class App extends Component {
 
     let creditData = new Array(...this.state.credit, newCredit);
     this.setState({credit: creditData});
-    this.setState({totalCredit: this.calcTotal(creditData)});
+    this.setState({totalCredit:this.state.totalCredit+newCredit.amount});
+    event.target.reset();
+  }
+
+  addDebit = (event) => {
+    event.preventDefault();
+
+    let debitDescription = event.target.description.value;
+    let debitAmount = event.target.amount.value;
+    let date = new Date().toISOString();
+
+    let newDebit = {
+      description: debitDescription,
+      amount: Number(debitAmount),
+      date: date
+    }
+
+    let debitData = new Array(...this.state.debit, newDebit);
+    this.setState({debit: debitData});
+    this.setState({totalCredit:(this.state.totalCredit)-newDebit.amount});
     event.target.reset();
   }
 
@@ -80,7 +102,7 @@ class App extends Component {
   }
 
   render() {
-    let HomeComponent = () => (<Home accountBalance={this.state.accountBalance}/>);
+    let HomeComponent = () => (<Home accountBalance={this.state.accountBalance.toFixed(2)}/>);
     
     let UserProfileComponent = () => (
       <UserProfile userName={this.state.currentUser.userName} memberSince={this.state.currentUser.memberSince} />
@@ -90,12 +112,21 @@ class App extends Component {
       <Credit 
         data = {this.state.credit}
         addCredit = {this.addCredit}
-        accountBalance = {this.state.totalCredit}
+        accountBalance = {this.state.totalCredit.toFixed(2)}
+      />
+    );
+
+    let DebitComponent= () =>(
+      <Debit
+      data={this.state.debit}
+      addDebit={this.addDebit}
+      accountBalance={this.state.totalCredit.toFixed(2)}
       />
     );
 
     let LogInComponent = () => (<Login user={this.state.currentUser} mockLogIn={this.mockLogIn} {...this.props} />);
 
+    
     return (
         <Router>
           <Switch>
@@ -103,7 +134,7 @@ class App extends Component {
             <Route exact path="/userProfile" render={UserProfileComponent}/>
             <Route exact path="/login" render={LogInComponent}/>
             <Route exact path="/credit" render={CreditComponent}/>
-            
+            <Route exact path="/debit" render={DebitComponent}/>
           </Switch>
         </Router>
     );
