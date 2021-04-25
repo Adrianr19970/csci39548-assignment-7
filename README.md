@@ -1,4 +1,4 @@
-Link to the deployed page: 
+Link to the deployed page: https://adrianr19970.github.io/csci39548-assignment-7/#/
 
 
 
