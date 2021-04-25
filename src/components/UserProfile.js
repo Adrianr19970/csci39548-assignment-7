@@ -14,7 +14,7 @@ class UserProfile extends Component {
                 <div id="loginDirectory">
                     <h4>Directory</h4>
                     <Link id="buttons" to="/credit"><button><p>View Credit</p></button></Link>
-                    <Link id="buttons" to="/debits"><button><p>View Debits</p></button></Link>
+                    <Link id="buttons" to="/debit"><button><p>View Debits</p></button></Link>
                     <Link id="buttons" to="/"><button><p>Logout</p></button></Link>
                 </div>
             </div>

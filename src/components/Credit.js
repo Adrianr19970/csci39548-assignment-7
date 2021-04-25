@@ -18,7 +18,7 @@ class Credit extends Component {
                 <div id="directory">
                     <label>Directory</label>
                     <Link id="buttons" to="/userProfile"><button><p>My Profile</p></button></Link>
-                    <Link id="buttons" to="/debits"><button><p>View Debits</p></button></Link>
+                    <Link id="buttons" to="/debit"><button><p>View Debits</p></button></Link>
                     <Link id="buttons" to="/"><button><p>Logout</p></button></Link>
                 </div>
 
